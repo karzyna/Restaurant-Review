@@ -163,3 +163,13 @@ getParameterByName = (name, url) => {
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+window.setTimeout(() => {
+  // Add title to Google Maps iframe
+document.querySelectorAll('#map iframe').forEach((item) => {
+  item.setAttribute('title', 'Google maps iframe');
+});
+// Remove Google map elements from tab order when page (google maps and markers) is loaded
+// Maps and markers has an animation so I add a little timeout to allow all maps elements appear in the DOM
+DBHelper.removeMapsTabOrder();
+}, 1000);

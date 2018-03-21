@@ -173,5 +173,11 @@ class DBHelper {
     );
     return marker;
   }
+  
+static removeMapsTabOrder() {
+    document.querySelectorAll('#map div, #map iframe, #map area, #map a, #map button').forEach((item) => {
+      item.setAttribute('tabindex', '-1');
+    });
+  }
 
 }
