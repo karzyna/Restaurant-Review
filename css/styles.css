@@ -347,6 +347,7 @@ a.skip-link:hover {
       flex-flow: row wrap;
     }
     .inside #map-container {
+      position: absolute;
         top: 115px;
         max-height: 400px;
         width: 100%;
@@ -356,15 +357,13 @@ a.skip-link:hover {
         order: 1;
         width: 100%;
     }
-    #restaurant-container,  {
-       position: fixed;
-        top: 515px;
+    #restaurant-container {
+        margin-top: 400px;
         order: 3;
         width: 100%;
     }
     #reviews-container {
-        position: fixed;
-        top: 1000px;
+        top: 800px;
         order: 4;
         width: 100%;
     }
