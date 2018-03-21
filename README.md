@@ -1,3 +1,8 @@
+# Restaurant-Review
+Project for Mobile Web Specialist Certification Course. Part I. Concerting a site into fully responsive and accessible page, ready for offline first approach. 
+---
+Live demo: https://github.com/karzyna/Restaurant-Review/settings
+
 # Mobile Web Specialist Certification Course
 ---
 #### _Three Stage Course Material Project - Restaurant Reviews_
@@ -26,4 +31,3 @@ Most of the code in this project has been written to the ES6 JavaScript specific
 
 
 
-# Restaurant-Review
