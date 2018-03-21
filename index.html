@@ -16,18 +16,19 @@
     </header>
 
     <main id="maincontent">
-        <section id="map-container" tabindex="-1">
-            <div id="map" ></div>
+        <a href="#content" class="skip-link">Skip to main content</a>
+        <section id="map-container">
+            <div id="map"></div>
         </section>
-        <section class='content'>
+        <section class='content' id="content">
             <div class="filter-options">
-                <h2>Filter Results</h2>
+                <h2 class="col-x">Filter Results</h2>
                 <div id="neighborhood-lb" hidden>Select neighborhood</div>
-                <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-labelledby="neighborhood-lb">
+                <select id="neighborhoods-select" class="col-x" name="neighborhoods" onchange="updateRestaurants()" aria-labelledby="neighborhood-lb">
                     <option value="all">All Neighborhoods</option>
                 </select>
                 <div id="cuisines-lb" hidden>Select type of cuisine</div>
-                <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-labelledby="cuisines-lb">
+                <select id="cuisines-select" class="col-x" name="cuisines" onchange="updateRestaurants()" aria-labelledby="cuisines-lb">
                   <option value="all">All Cuisines</option>
                 </select>
             </div>
