@@ -341,7 +341,7 @@ a.skip-link:hover {
 }
 
 
-/* @media screen and (max-width: 879px) {
+@media screen and (max-width: 879px) {
     .inside #maincontent {
       display: flex;
       flex-flow: row wrap;
@@ -369,10 +369,11 @@ a.skip-link:hover {
         width: 100%;
     }
     #footer {
-        position: fixed;
+        position: absolute;
         bottom: 0;
+        width: 100%;
     }
-} */
+}
 
 @media screen and (max-width: 915px) {
     #restaurants-list li {
