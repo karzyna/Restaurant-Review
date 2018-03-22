@@ -159,6 +159,11 @@ class DBHelper {
   static altTextForRestaurant(restaurant) {
     return (`${restaurant.photographalt}`);
   }
+  
+  
+  // more.setAttribute("aria-label", "restaurant: " + restaurant.name);
+
+
 
   /**
    * Map marker for a restaurant.

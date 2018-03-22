@@ -11,7 +11,7 @@ body {
 	background-color: #fdfdfd;
 	margin: 0;
 	position: relative;
-    min-height: 100%;
+  min-height: 100%;
 }
 
 ul, li {
@@ -150,7 +150,9 @@ a.skip-link:hover {
   padding: 10px;
   width: 30%;
   line-height: 1.2em;
-
+}
+.filter-options select:focus, .filter-options select:hover {
+  outline-color: crimson
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -213,6 +215,10 @@ a.skip-link:hover {
     width: 80%;
 }
 
+#noResults {
+  margin: 40px 20px;
+  color: #2d2d2d;
+}
 /* ====================== Restaurant Details ====================== */
 .inside header {
   position: fixed;
@@ -283,6 +289,7 @@ a.skip-link:hover {
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
+  margin-left: 30px;
 }
 #reviews-list {
   margin: 0;
@@ -294,11 +301,10 @@ a.skip-link:hover {
   border-top-left-radius: 25px;
   display: block;
   list-style-type: none;
-  margin: 0 0 30px;
+  margin: 30px;
   overflow: hidden;
   position: relative;
-  width: 85%;
-/*    padding: 0 20px 20px;*/
+  width: 70%;
 }
 #reviews-list li p {
   margin: 0 0 10px;
@@ -379,24 +385,32 @@ a.skip-link:hover {
         width: 80%;
     }
   }
+  
+  @media screen and (max-width: 754px) {
+    nav h1 a {
+        font-size: 1.25em;
+        /* vertical-align: middle; */
+    }
+    .filter-options {
+      display: flex;
+      flex-flow: row wrap;
+    }
+    .col-x {
+      margin: 5%;
+      min-width: 90%;
+    }
+  }
 
 @media screen and (max-width: 545px) {
     nav h1 a {
         font-size: 1em;
     }
+    #reviews-list li p {
+      font-size: 14px;
+    }
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
 }
 
-@media screen and (max-width: 754px) {
-  nav h1 a {
-      font-size: 1.25em;
-      /* vertical-align: middle; */
-  }
-  .filter-options {
-    display: flex;
-    flex-flow: row wrap;
-  }
-  .col-x {
-    margin: 5%;
-    min-width: 90%;
-  }
-}
+

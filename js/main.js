@@ -137,10 +137,19 @@ resetRestaurants = (restaurants) => {
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById('restaurants-list');
-  restaurants.forEach(restaurant => {
-    ul.append(createRestaurantHTML(restaurant));
-  });
-  addMarkersToMap();
+  console.log(restaurants.length);
+  if (restaurants.length == 0) {
+    const h = document.createElement('h2');
+    h.append('No results');
+    h.setAttribute('id', 'noResults');
+    ul.append(h);
+  } else {
+    restaurants.forEach(restaurant => {
+      ul.append(createRestaurantHTML(restaurant));
+    });
+    addMarkersToMap();
+  }
+
 }
 
 /**
@@ -188,3 +197,9 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 }
+// Registration of Service Worker
+navigator.serviceWorker.register('/js/sw/sw.js').then(function() {
+  console.log("It worked");
+}).catch(function() {
+ console.log('Registration failed!');
+});//
