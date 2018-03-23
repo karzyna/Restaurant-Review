@@ -177,6 +177,9 @@ a.skip-link:hover {
   text-align: left;
   width: 270px;
   text-align: center;
+  -webkit-box-shadow: 5px 5px 15px 0px rgba(136,136,136,1);
+  -moz-box-shadow: 5px 5px 15px 0px rgba(136,136,136,1);
+  box-shadow: 5px 5px 15px 0px rgba(136,136,136,1);
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -213,6 +216,13 @@ a.skip-link:hover {
   text-decoration: none;
   text-transform: uppercase;
     width: 80%;
+}
+
+#restaurants-list li a:hover {
+  background-color: #2d2d2d;
+  color:  #eee;
+  text-decoration: underline;
+  border-bottom: 3px solid orange;
 }
 
 #noResults {
