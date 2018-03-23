@@ -153,18 +153,13 @@ class DBHelper {
     return (`/img/${restaurant.photograph}`);
   }
     
-      /**
-   * Restaurant image alt.
-   */
+  /**
+  * Restaurant image alt.
+  */
   static altTextForRestaurant(restaurant) {
     return (`${restaurant.photographalt}`);
   }
   
-  
-  // more.setAttribute("aria-label", "restaurant: " + restaurant.name);
-
-
-
   /**
    * Map marker for a restaurant.
    */
