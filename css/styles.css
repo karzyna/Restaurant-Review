@@ -399,7 +399,6 @@ a.skip-link:hover {
   @media screen and (max-width: 754px) {
     nav h1 a {
         font-size: 1.25em;
-        /* vertical-align: middle; */
     }
     .filter-options {
       display: flex;
@@ -422,5 +421,3 @@ a.skip-link:hover {
       display: block;
     }
 }
-
-
