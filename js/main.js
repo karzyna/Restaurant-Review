@@ -143,6 +143,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     h.append('No results');
     h.setAttribute('id', 'noResults');
     ul.append(h);
+    ul.setAttribute('role', 'list');
   } else {
     restaurants.forEach(restaurant => {
       ul.append(createRestaurantHTML(restaurant));
@@ -164,7 +165,7 @@ createRestaurantHTML = (restaurant) => {
   image.alt = DBHelper.altTextForRestaurant(restaurant);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 
@@ -180,6 +181,8 @@ createRestaurantHTML = (restaurant) => {
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
+
+  li.setAttribute('role', 'listitem');
 
   return li
 }

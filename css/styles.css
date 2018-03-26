@@ -357,7 +357,7 @@ a.skip-link:hover {
 }
 
 
-@media screen and (max-width: 879px) {
+@media only screen and (max-width: 879px) {
     .inside #maincontent {
       display: flex;
       flex-flow: row wrap;
@@ -390,13 +390,13 @@ a.skip-link:hover {
     }
 }
 
-@media screen and (max-width: 915px) {
+@media only screen and (max-width: 915px) {
     #restaurants-list li {
         width: 80%;
     }
   }
   
-  @media screen and (max-width: 754px) {
+  @media only screen and (max-width: 754px) {
     nav h1 a {
         font-size: 1.25em;
     }
