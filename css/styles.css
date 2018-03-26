@@ -299,7 +299,9 @@ a.skip-link:hover {
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
-  margin-left: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 #reviews-list {
   margin: 0;
@@ -311,10 +313,13 @@ a.skip-link:hover {
   border-top-left-radius: 25px;
   display: block;
   list-style-type: none;
-  margin: 30px;
   overflow: hidden;
   position: relative;
-  width: 70%;
+  /* width: 70%;
+  margin: 30px; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 #reviews-list li p {
   margin: 0 0 10px;
