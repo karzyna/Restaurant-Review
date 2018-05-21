@@ -137,7 +137,7 @@ resetRestaurants = (restaurants) => {
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById('restaurants-list');
-  console.log(restaurants.length);
+  //console.log(restaurants.length);
   if (restaurants.length == 0) {
     const h = document.createElement('h2');
     h.append('No results');

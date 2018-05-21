@@ -5,11 +5,15 @@ body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	color: #333;
-	line-height: 1.5;
+  line-height: 1.5;
+  margin: 0;
 }
 body {
 	background-color: #fdfdfd;
-	margin: 0;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
 	position: relative;
   min-height: 100%;
 }
@@ -48,10 +52,14 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   color: #dbdbdb;
   font-size: 14px;
   letter-spacing: 1px;
-  padding: 25px;
+  padding: 25px 0 25px 0;
+  margin: 0px;
   text-align: center;
   text-transform: uppercase;
+  left: 0;
+  width: 100%;
 }
+
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
@@ -129,6 +137,8 @@ a.skip-link:hover {
   align-items: center;
   display: flex;
   justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
 .filter-options h2 {
@@ -215,7 +225,7 @@ a.skip-link:hover {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-    width: 80%;
+  width: 80%;
 }
 
 #restaurants-list li a:hover {
@@ -233,12 +243,14 @@ a.skip-link:hover {
 .inside header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
+  height: 83%;
+  bottom: 20px;
   position: fixed;
   right: 0;
   top: 80px;
@@ -250,8 +262,10 @@ a.skip-link:hover {
   width: 100%;
 }
 .inside #footer {
+  position: fixed;
   bottom: 0;
-  position: absolute;
+  left: 0;
+  padding: 25px 0 25px 0;
   width: 100%;
 }
 #restaurant-name {
@@ -315,8 +329,6 @@ a.skip-link:hover {
   list-style-type: none;
   overflow: hidden;
   position: relative;
-  /* width: 70%;
-  margin: 30px; */
   margin-left: auto;
   margin-right: auto;
   width: 80%;
@@ -391,7 +403,13 @@ a.skip-link:hover {
     #footer {
         position: absolute;
         bottom: 0;
+        padding: 25px 0 25px 0;
+        margin: 0;
+        left: 0;
         width: 100%;
+    }
+    .inside #footer {
+      position: absolute;
     }
 }
 

@@ -8,27 +8,67 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    const port = 8000 // Change this to your server port
-    return `http://localhost:${port}/data/restaurants.json`;
+    const port = 1337 // Change this to your server port
+    return `http://localhost:${port}/restaurants`;
   }
 
   /**
    * Fetch all restaurants.
    */
+  // static fetchRestaurants(callback) {
+  //   console.log(callback);
+  //   let xhr = new XMLHttpRequest();
+  //   xhr.open('GET', DBHelper.DATABASE_URL);
+  //   xhr.onload = () => {
+  //     if (xhr.status === 200) { // Got a success response from server!
+  //       const json = JSON.parse(xhr.responseText);
+  //       const restaurants = json;
+  //       console.log(json);
+  //       callback(null, restaurants);
+  //     } else { // Oops!. Got an error from server.
+  //       const error = (`Request failed. Returned status of ${xhr.status}`);
+  //       callback(error, null);
+  //     }
+  //   };
+  //   console.log(xhr);
+  //   xhr.send(); 
+  // }
+
   static fetchRestaurants(callback) {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', DBHelper.DATABASE_URL);
-    xhr.onload = () => {
-      if (xhr.status === 200) { // Got a success response from server!
-        const json = JSON.parse(xhr.responseText);
-        const restaurants = json.restaurants;
-        callback(null, restaurants);
-      } else { // Oops!. Got an error from server.
-        const error = (`Request failed. Returned status of ${xhr.status}`);
-        callback(error, null);
+
+
+    // const restaurants = JSON.parse(allObjs);
+    // console.log(restaurants);
+
+    fetch(DBHelper.DATABASE_URL)
+    .then(function(response)
+      {
+        
+        if (!response.ok) {
+          const restaurants = dbPromise.then(db => {
+            return db.transaction('objs')
+              .objectStore('objs').get('restaurant_list');
+          }).then(allObjs =>  callback(null, allObjs.data)
+         );
+        }
+      return response.json();
       }
-    };
-    xhr.send();
+    ).then(function(myJson) {
+        dbPromise.then(db => {
+          const tx = db.transaction('objs', 'readwrite');
+          tx.objectStore('objs').put({
+            id: 'restaurant_list',
+            data: myJson
+          });
+          return tx.complete;
+      });
+       callback(null, myJson);
+    }).catch(e => {
+
+      console.log(e);
+      //callback(e, null);
+      callback(null, {...restaurants.data[0]});
+    }) 
   }
 
   /**
@@ -49,6 +89,9 @@ class DBHelper {
       }
     });
   }
+
+
+  
 
   /**
    * Fetch restaurants by a cuisine type with proper error handling.
@@ -150,14 +193,14 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`/img/${restaurant.photograph}`);
+    return (`/img/${restaurant.photograph}.jpg`);
   }
     
   /**
   * Restaurant image alt.
   */
   static altTextForRestaurant(restaurant) {
-    return (`${restaurant.photographalt}`);
+    return (`${restaurant.name} Restaurant`);
   }
   
   /**
@@ -181,3 +224,4 @@ static removeMapsTabOrder() {
   }
 
 }
+

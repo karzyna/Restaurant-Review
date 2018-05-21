@@ -1,5 +1,5 @@
 var APP_PREFIX = 'RestaurantReview_'     // Identifier for this app (this needs to be consistent across every cache update)
-var VERSION = 'version_09'              // Version of the off-line cache (change this value everytime you want to update cache)
+var VERSION = 'version_12'              // Version of the off-line cache (change this value everytime you want to update cache)
 var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [                            // Add URL you want to cache in this list.
   '/index.html',
@@ -7,8 +7,11 @@ var URLS = [                            // Add URL you want to cache in this lis
   '/js/main.js',
   '/js/dbhelper.js',
   '/js/restaurant_info.js',
+  '/js/index_idb.js',
   '/css/styles.css',
-  '/img/'            
+  '/img/',
+  '/lib/idb.js',
+
 ];
 
 // Respond with cached resources

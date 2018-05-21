@@ -7,12 +7,17 @@
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <!-- Main CSS file -->
   <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="manifest" href="/manifest.json">
+
+  <meta name="viewport" content="width=device-width" initial-scale="1.0">
+  <meta name="theme-color" content="#333">
+  
   <title>Restaurant Info</title>
 </head>
 
 <body class="inside">
   <!-- Beginning header -->
-  <header>
+  <header class="container-fluid">
     <!-- Beginning nav -->
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
@@ -27,7 +32,7 @@
   <!-- End header -->
 
   <!-- Beginning main -->
-  <main id="maincontent" class="">
+  <main id="maincontent">
     <!-- Beginning map -->
     <section id="map-container" role="application">
       <div id="map"></div>
@@ -51,18 +56,23 @@
   <!-- End main -->
 
   <!-- Beginning footer -->
-  <footer id="footer">
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  <footer id="footer" class="container-fluid">
+    <div class="container-fluid">
+      Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    </div>
   </footer>
   <!-- End footer -->
 
   <!-- Beginning scripts -->
+  <script type="application/javascript" src="lib/idb.js"></script>
+  <script type="application/javascript" src="js/index_idb.js"></script>
   <!-- Database helpers -->
-  <script type="text/javascript" src="js/dbhelper.js"></script>
+  <script type="application/javascript" src="js/dbhelper.js"></script>
   <!-- Main javascript file -->
-  <script type="text/javascript" src="js/restaurant_info.js"></script>
+  <script type="application/javascript" src="js/restaurant_info.js"></script>
   <!-- Google Maps -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAKCeoN5tbDgSeIMQAjUXdDGaEIXCygig&libraries=places&callback=initMap"></script>
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAKCeoN5tbDgSeIMQAjUXdDGaEIXCygig&libraries=places&callback=initMap"></script> -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"></script>
   <!-- End scripts -->
 
 </body>
