@@ -1,3 +1,1 @@
-const dbPromise = idb.open('keyval-store', 1, upgradeDB => {
-    upgradeDB.createObjectStore('objs', {keyPath: 'id'});
-  });
+const dbPromise=idb.open("keyval-store",1,e=>{e.createObjectStore("objs",{keyPath:"id"})});
