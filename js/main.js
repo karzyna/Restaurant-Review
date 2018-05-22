@@ -150,7 +150,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     });
     addMarkersToMap();
   }
-
+  new LazyLoad();
 }
 
 /**
@@ -161,7 +161,8 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  // image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.setAttribute('data-src', DBHelper.imageUrlForRestaurant(restaurant));
   image.alt = DBHelper.altTextForRestaurant(restaurant);
   li.append(image);
 

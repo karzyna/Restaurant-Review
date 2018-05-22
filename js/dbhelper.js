@@ -35,11 +35,6 @@ class DBHelper {
   // }
 
   static fetchRestaurants(callback) {
-
-
-    // const restaurants = JSON.parse(allObjs);
-    // console.log(restaurants);
-
     fetch(DBHelper.DATABASE_URL)
     .then(function(response)
       {
