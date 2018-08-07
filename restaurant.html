@@ -59,23 +59,62 @@
   <main id="maincontent">
     <!-- Beginning map -->
     <section id="map-container" role="application">
-      <div id="map"></div>
+        <button  style="z-index: 2000" id='collapsible' class='collapsible' onclick="toggle_map()"><img src="icons/33409.svg"/>Show Map</button>
+        <div id="map" style="display: none"></div>
+
+
+
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
       <h2 id="restaurant-name"></h2>
-      <img id="restaurant-img">
+      <div class='wrapper' style="position: relative;">
+        <img id="restaurant-img">
+        <div class="helper">
+          <button class="text">
+            <span class="inner"></span>
+          </button>
+        </div>
+        <div class="shadow"></div>
+        <!-- <div class="shadow"></div> -->
+      </div>
       <p id="restaurant-cuisine"></p>
       <p id="restaurant-address"></p>
       <table id="restaurant-hours"></table>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
+
+
+    <!-- kopiowane -->
     <section id="reviews-container">
       <ul id="reviews-list"></ul>
+      <section  id="form-container" tabindex="0" aria-label="comment form">
+        <h2 id="">Add Review</h2>
+        
+        <form id="review-form">
+            <label for='#review-author'> Author: </label><br/>  
+            <input id ="review-author" type='text' name='name'></textarea>
+            
+            <div class="rating-container">
+              <p>Rating:</p>
+              <select aria-label="Rating select" id="rating_select" name="Rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+          </div>
+          <label for="#review-opinion">Opinion:</label></br>
+          <textarea id="review-opinion" name="opinion"></textarea></br>
+          <button class='submit-button' onclick="addReview(event)">Add Review</button>
+        </form>
+      </section>
     </section>
     <!-- End reviews -->
+ 
   </main>
   <!-- End main -->
 

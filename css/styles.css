@@ -188,7 +188,7 @@ a.skip-link:hover {
     text-align: center;
     -webkit-box-shadow: 5px 5px 15px 0 rgba(136, 136, 136, 1);
     -moz-box-shadow: 5px 5px 15px 0 rgba(136, 136, 136, 1);
-    box-shadow: 5px 5px 15px 0 rgba(136, 136, 136, 1)
+    box-shadow: 5px 5px 15px 0 rgba(136, 136, 136, 1);
 }
 
 #restaurants-list .restaurant-img {
@@ -199,6 +199,82 @@ a.skip-link:hover {
     min-height: 248px;
     min-width: 100%
 }
+.wrapper {
+    cursor: pointer;
+    min-width: 100%;
+    width:100%;
+}
+.overlay > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.favourite > div  {
+    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    position: absolute;
+    top:5%;
+    right: 5%;
+    height: 20%;
+    width: 20%;
+    opacity: 1;
+}
+.favourite > div > .text  {
+    background-color: rgba(0, 0, 0, .9);
+    color: white;
+    position: relative;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+.favourite .shadow {
+    position: absolute;
+    content: "";
+    background: orange;
+    width: 20%;
+    height: 20%;
+    right: 6%;
+    top: 6%;
+    filter : blur(5px);
+    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.favourite > div > .text > .inner {
+    position: absolute;
+    /* bottom: 3%;
+    right: 4%; */
+    right: 5%;
+    bottom: 3%;
+    font-size: 2.5em;
+}
+.overlay > div > .text  {
+    position: absolute;
+    color: white;
+    font-size: 1.5em;
+    top: 50%;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    background-color: #2d2d2d;
+    opacity: 0.8;
+}
+    
+#restaurants-list li .wrapper:hover > div{
+    opacity: 0.85;
+}
+
+
 
 #restaurants-list li h1 {
     color: #b56000;
@@ -252,13 +328,21 @@ a.skip-link:hover {
 }
 
 .inside #map-container {
-    background: blue none repeat scroll 0 0;
+    /* background: blue none repeat scroll 0 0; */
     height: 83%;
     bottom: 20px;
     position: fixed;
     right: 0;
     top: 80px;
     width: 50%
+    
+}
+
+.inside #map-container .collapsible > img, #map-container .collapsible > img  {
+    width: 15%;
+    height: 15%;
+    display: block;
+    margin: auto;
 }
 
 .inside #map {
@@ -316,6 +400,46 @@ a.skip-link:hover {
     padding: 140px 40px 30px;
     width: 50%
 }
+
+.inside.wrapper {
+    width: 90%;
+    max-width: 90%;
+    border-top-left-radius: 25px;
+    position: relative;
+}
+.inside #restaurant-container .wrapper:hover > div{
+    opacity: 0.85;
+}
+
+.inside #restaurant-container .wrapper .overlay > div{
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+
+}
+
+.inside #restaurant-container .helper {
+    -webkit-transform: translate(0, -50%) !important;
+    -ms-transform: translate(0, -50%) !important;
+    transform: translate(0, -50%) !important;
+    width: 90%;
+    border-top-left-radius: 25px;
+}
+
+.inside main #restaurant-container > .wrapper.favourite > .helper {
+    top: 13%;
+    right: 11.5% !important;
+    height: 15%;
+    width: 15%;
+}
+
+.inside main #restaurant-container > .wrapper.favourite > .shadow{
+    top:5%;
+    right: 12%;
+    height: 15%;
+    width: 15%;
+}
+
 
 #reviews-container {
     padding: 30px 40px 80px
@@ -390,6 +514,40 @@ p:nth-child(2) {
 
 #restaurant-hours td {
     color: #666
+}
+
+#form-container {
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+.collapsible {
+    background-color: #ccc;
+    color: #444;
+    padding: 18px;
+    margin-left: 5px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .active, .collapsible:hover {
+    background-color: #eee;
+  }
+.submit-button {
+    background-color: #2d2d2d;
+    color: white;
+    padding: 3%;
+    width: 90%;
+    font-size: 1.5em;
+    margin-bottom: 2.5em;
+}
+#rating_select, #review-author, #review-opinion {
+    width: 90%;
 }
 
 @media only screen and (max-width:879px) {

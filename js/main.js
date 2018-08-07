@@ -57,14 +57,58 @@ document.addEventListener("DOMContentLoaded", e => {
     }), addMarkersToMap();
     new LazyLoad
 }), createRestaurantHTML = (e => {
+    console.log(e);
+    console.log("id: ", e.id, "isfav: ", e.is_favorite);
+
     const t = document.createElement("li"),
+        b = document.createElement('div');
         r = document.createElement("picture"),
-        n = document.createElement("source");
+        n = document.createElement("source"),
+        m = document.createElement("div"),
+        f = document.createElement('button');
+        g = document.createElement('span');
+        j = document.createElement('div')
     n.setAttribute("srcset", "/img/small_" + e.photograph + ".jp2 500w, /img/" + e.photograph + ".jp2 1000w "), n.setAttribute("type", "image/jp2"), r.append(n);
     const s = document.createElement("source");
     s.setAttribute("srcset", "/img/small_" + e.photograph + ".webp 500w, /img/" + e.photograph + ".webp 1000w "), s.setAttribute("type", "image/webp"), r.append(s);
+    b.classList.add('wrapper');
+    b.style.position = 'relative';
+    b.append(r);
+
+    f.classList.add('text');
+    if(e.is_favorite) {
+        g.innerHTML = '';
+        b.classList.add('favourite');
+    } else {
+        g.innerHTML = 'Add to your favorites';
+        b.classList.add('overlay');
+    }
+    
+    g.classList.add('inner');
+    f.append(g);
+    m.append(f);
+   
+    b.onclick =  function() {
+        this.classList.toggle('overlay');
+
+        if (this.classList.toggle('favourite')){
+            this.getElementsByTagName('span')[0].innerHTML = '';
+        }
+        else {
+            this.getElementsByTagName('span')[0].innerHTML= 'Add to your favourites';
+        }
+        const isFavNow = !e.is_favorite;
+        DBHelper.updateFavouriteStatus(e.id, isFavNow);
+        e.is_favorite = !e.is_favorite
+    }
+    
+    b.append(m);
+    j.classList.add('shadow')
+    b.append(j);
+
+    
     const o = document.createElement("img");
-    o.className = "restaurant-img", o.setAttribute("data-src", "/img/" + e.photograph + ".jpg"), o.alt = DBHelper.altTextForRestaurant(e), r.append(o), t.append(r);
+    o.className = "restaurant-img", o.setAttribute("data-src", "/img/" + e.photograph + ".jpg"), o.alt = DBHelper.altTextForRestaurant(e), r.append(o), t.prepend(b);
     const a = document.createElement("h2");
     a.innerHTML = e.name, t.append(a);
     const i = document.createElement("p");
@@ -99,3 +143,13 @@ document.addEventListener("DOMContentLoaded", e => {
 }), navigator.serviceWorker.addEventListener("controllerchange", function () {
     refreshing || (window.location.reload(), refreshing = !0)
 });
+
+
+const toggle_map = () => {
+    if (document.getElementById('map').style.display === 'none') {
+      document.getElementById('map').style.display = 'block';
+      document.getElementById('collapsible').style.display =" none";
+    } else {
+      document.getElementById('map').style.display = 'none';
+    }
+}

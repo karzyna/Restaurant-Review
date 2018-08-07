@@ -48,8 +48,13 @@
     <main id="maincontent">
         <a href="#content" class="skip-link">Skip to main content</a>
         <section id="map-container" role="application">
-            <div id="map"></div>
+
+            <div id="map" style="display: none"></div>
+            <button id='collapsible' class='collapsible' onclick="toggle_map()"><img src="icons/33409.svg"/>Show Map</button>
+
+
         </section>
+
         <section class='content' id="content">
             <div class="filter-options">
                 <h2 class="col-x">Filter Results</h2>
@@ -73,6 +78,7 @@
     <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAKCeoN5tbDgSeIMQAjUXdDGaEIXCygig&libraries=places&callback=initMap"></script>-->
     <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"></script>
+
 
     <footer id="footer" class="container-fluid test">
         <div class="container-fluid">
