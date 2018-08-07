@@ -1,4 +1,3 @@
-  //KOPIOWANE
 const dbPromise = idb.open("keyval-store", 1, upgradeDb => {
     switch (upgradeDb.oldVersion) {
         case 0:
