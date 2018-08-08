@@ -534,6 +534,10 @@ p:nth-child(2) {
     outline: none;
     font-size: 15px;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
   }
   .active, .collapsible:hover {
     background-color: #eee;

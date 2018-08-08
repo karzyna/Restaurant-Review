@@ -59,7 +59,7 @@
   <main id="maincontent">
     <!-- Beginning map -->
     <section id="map-container" role="application">
-        <button  tabindex="0" role="button" style="z-index: 2000" id='collapsible' class='collapsible' onclick="toggle_map()"><img src="icons/33409.svg" alt="show map"/>Show Map</button>
+        <button  tabindex="0" name='show map' role="button" style="z-index: 2000" id='collapsible' class='collapsible' onclick="toggle_map()"><img src="icons/33409.svg" alt="show map"/>Show Map</button>
         <div id="map" style="display: none"></div>
 
 
@@ -72,7 +72,7 @@
       <div class='wrapper' style="position: relative;">
         <img id="restaurant-img">
         <div class="helper">
-          <button class="text">
+          <button class="text" name="addFav">
             <span class="inner"></span>
           </button>
         </div>
@@ -92,11 +92,11 @@
         <h2 id="">Add Review</h2>
         
         <form id="review-form">
-            <label for='#review-author'> Author: </label><br/>  
-            <input id ="review-author" type='text' name='name'></textarea>
+            <label for='review-author'> Author: </label><br/>  
+            <input id ="review-author" type='text' name='textfield'></textarea>
             
             <div class="rating-container">
-              <p>Rating:</p>
+              <label for='rating_select'>Rating:</label><br>
               <select aria-label="Rating select" id="rating_select" name="Rating">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -105,9 +105,9 @@
                 <option value="5">5</option>
               </select>
           </div>
-          <label for="#review-opinion">Opinion:</label></br>
+          <label for="review-opinion">Opinion:</label></br>
           <textarea id="review-opinion" name="opinion"></textarea></br>
-          <button class='submit-button' onclick="addReview(event)">Add Review</button>
+          <button class='submit-button' name="submit-review" onclick="addReview(event)">Add Review</button>
         </form>
       </section>
     </section>
